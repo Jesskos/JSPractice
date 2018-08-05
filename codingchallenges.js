@@ -23,3 +23,22 @@ function isPermutation(str1, str2) {
 }
 }
 
+function makeBinarySearch(arr, elToFind) { // searches for an element in a sorted array 
+    let left = 0;
+    let right = arr.length-1
+    let found = false;
+	while (left < right) {
+        let mid = Math.floor((left + right)/2)
+        console.log(`mid index: ${mid}`)
+        console.log(`mid value: ${arr[mid]}`)
+		if (arr[mid]>elToFind) {
+			right = mid -1 
+		} else if (arr[mid] < elToFind) {
+			left = mid + 1
+		} else if (arr[mid]===elToFind) {
+			return `${elToFind} found at index ${mid}`
+		}
+		
+	}
+	return `${elToFind} not found`
+}
