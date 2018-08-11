@@ -42,3 +42,20 @@ function makeBinarySearch(arr, elToFind) { // searches for an element in a sorte
 	}
 	return `${elToFind} not found`
 }
+
+function decToBinary(num) {
+	let str = "";
+	while (num > 0) {
+		if (num % 2 === 0) {
+			str = "0" + str;
+			num = Math.floor(num/2); 
+		} else {
+			str = "1" + str;
+			num = Math.floor(num/2);
+		} 
+			}
+		return str;
+}
+
+console.log(decToBinary(8))
+
